@@ -105,6 +105,7 @@ public class MainActivity2 extends AppCompatActivity {
             @Override
             public void onFailure(Call<ProductsResponse> call, Throwable t) {
                 Log.d("MainActivity2", "Unexpected error");
+                //
             }
         });
     }
