@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.annotation.SuppressLint;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -103,7 +104,7 @@ public class MainActivity2 extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<ProductsResponse> call, Throwable t) {
-
+                Log.d("MainActivity2", "Unexpected error");
             }
         });
     }
