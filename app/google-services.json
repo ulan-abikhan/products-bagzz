@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "34054186266",
+    "firebase_url": "https://optical-branch-362516-default-rtdb.firebaseio.com",
+    "project_id": "optical-branch-362516",
+    "storage_bucket": "optical-branch-362516.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:34054186266:android:3c23df72db9e50c673b8a3",
+        "android_client_info": {
+          "package_name": "com.example.first"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "34054186266-jmhhlqoe0i3dm8c1eb2kqr669bue5p44.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjBv7Hf3-rnuL_fMmo_foO7jx829L90MU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "34054186266-jmhhlqoe0i3dm8c1eb2kqr669bue5p44.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
