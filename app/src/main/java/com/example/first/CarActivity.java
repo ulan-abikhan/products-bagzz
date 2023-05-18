@@ -38,7 +38,7 @@ public class CarActivity extends AppCompatActivity {
         productTitle.setText(product.getTitle());
 
         ViewPager2 pager = findViewById(R.id.view_pager);
-        FragmentStateAdapter pageAdapter = new FragmentPagerAdapter(this, product.getDescription());
+        FragmentStateAdapter pageAdapter = new FragmentPagerAdapter(this, product.getDescription(), product.getImages());
         pager.setAdapter(pageAdapter);
 
         TabLayout tabLayout = findViewById(R.id.tab_layout);

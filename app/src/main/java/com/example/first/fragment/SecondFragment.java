@@ -3,6 +3,8 @@ package com.example.first.fragment;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +12,10 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.first.R;
+import com.example.first.adapter.ProductImagesAdapter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -18,22 +24,19 @@ import com.example.first.R;
  */
 public class SecondFragment extends Fragment {
 
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private static final String ARG_PARAM1 = "images";
 
-    private String mParam1;
-    private String mParam2;
+    private List<String> images;
 
     public SecondFragment() {
 
     }
 
 
-    public static SecondFragment newInstance(String param1, String param2) {
+    public static SecondFragment newInstance(List<String> images) {
         SecondFragment fragment = new SecondFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+        args.putStringArrayList(ARG_PARAM1, (ArrayList<String>) images);
         fragment.setArguments(args);
         return fragment;
     }
@@ -42,8 +45,7 @@ public class SecondFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            images = getArguments().getStringArrayList(ARG_PARAM1);
         }
     }
 
@@ -51,9 +53,13 @@ public class SecondFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_second, container, false);
+        RecyclerView recyclerView = view.findViewById(R.id.product_images);
 
-        //if (getArguments() != null)
-            //second.setText(getArguments().getString(ARG_PARAM2));
+        ProductImagesAdapter productImagesAdapter = new ProductImagesAdapter(images, getActivity());
+
+        recyclerView.setAdapter(productImagesAdapter);
+        recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 2, RecyclerView.VERTICAL, false));
+
         return view;
     }
 }
