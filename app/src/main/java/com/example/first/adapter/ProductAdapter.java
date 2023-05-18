@@ -12,6 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.first.CarActivity;
 import com.example.first.MainActivity2;
 import com.example.first.R;
 import com.example.first.model.Category;
@@ -47,9 +48,9 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
 
         holder.productName.setText(product.getTitle());
         holder.itemView.setOnClickListener(v -> {
-//            Intent intent = new Intent(context, MainActivity2.class);
-//            intent.putExtra("category", category.getName());
-//            context.startActivity(intent);
+            Intent intent = new Intent(context, CarActivity.class);
+            intent.putExtra("product", product);
+            context.startActivity(intent);
         });
 
         holder.likeImage.setOnClickListener(v -> {

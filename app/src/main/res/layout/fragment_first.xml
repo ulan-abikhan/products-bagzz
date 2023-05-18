@@ -3,16 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
     tools:context=".fragment.FirstFragment">
 
     <TextView
-        android:id="@+id/fragmentText"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textColor="@color/white"
-        android:gravity="center"
-        android:textSize="50sp"
-        android:text="First"/>
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="12dp"
+        android:id="@+id/descriptionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/b5b"
+        android:textSize="20sp"
+        android:text="As in handbags, the double ring and bar design defines the wallet shape, highlighting the front flap closure which is tucked inside the hardware. Completed with an organizational interior, the black leather wallet features a detachable chain."/>
 
 </FrameLayout>

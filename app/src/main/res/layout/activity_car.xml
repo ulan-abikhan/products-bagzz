@@ -1,62 +1,144 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CarActivity">
+    android:orientation="vertical"
+    tools:context=".MainActivity2">
 
-    <EditText
-        android:id="@+id/model"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="50dp"
-        android:ems="10"
-        android:fontFamily="@font/playfair_display"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <EditText
-        android:id="@+id/brand"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="50dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/model" />
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="63dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/main_page_icon" />
 
-    <EditText
-        android:id="@+id/year"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="50dp"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/brand" />
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="53dp"
+            android:fontFamily="@font/playfair_display_bold"
+            android:text="bagzz"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/insert"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="65dp"
-        android:text="Insert"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/year" />
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="54dp"
+            android:layout_marginEnd="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/avatar" />
 
-    <Button
-        android:id="@+id/show"
-        android:layout_width="wrap_content"
+
+        <ImageView
+            android:id="@+id/product_thumbnail"
+            android:layout_width="170dp"
+            android:layout_height="155dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="35dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/girl_two"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageView2" />
+
+        <TextView
+            android:id="@+id/productTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:text="TextView"
+            app:layout_constraintStart_toEndOf="@+id/product_thumbnail"
+            app:layout_constraintTop_toTopOf="@+id/product_thumbnail" />
+
+        <TextView
+            android:id="@+id/product_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="4dp"
+            android:text="TextView"
+            app:layout_constraintStart_toEndOf="@+id/product_thumbnail"
+            app:layout_constraintTop_toBottomOf="@+id/productTitle" />
+
+        <TextView
+            android:id="@+id/product_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:text="TextView"
+            app:layout_constraintStart_toEndOf="@+id/product_thumbnail"
+            app:layout_constraintTop_toBottomOf="@+id/product_subtitle" />
+
+        <Button
+            android:id="@+id/product_buy_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:text="Buy now"
+            app:layout_constraintStart_toEndOf="@+id/product_thumbnail"
+            app:layout_constraintTop_toBottomOf="@+id/product_price" />
+
+        <TextView
+            android:id="@+id/add_to_card_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="9dp"
+            android:fontFamily="@font/playfair_display_bold"
+            android:text="@string/add_to_card"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@+id/product_thumbnail"
+            app:layout_constraintTop_toBottomOf="@+id/product_buy_button" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="200dp"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_marginTop="45dp"
+        app:tabSelectedTextColor="@color/black"
+        android:layout_gravity="top">
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Description"/>
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Images"/>
+
+    </com.google.android.material.tabs.TabLayout>
+
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+
+
+
+
+</LinearLayout>

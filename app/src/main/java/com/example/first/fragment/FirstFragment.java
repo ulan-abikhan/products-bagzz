@@ -18,25 +18,21 @@ import com.example.first.R;
  */
 public class FirstFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-    private static int count = 0;
+   private static final String ARG_PARAM1 = "description";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+
+    private String description;
 
     public FirstFragment() {
-        // Required empty public constructor
+
     }
 
 
     // TODO: Rename and change types and number of parameters
-    public static FirstFragment newInstance() {
+    public static FirstFragment newInstance(String mDescription) {
         FirstFragment fragment = new FirstFragment();
         Bundle args = new Bundle();
+        args.putString(ARG_PARAM1, mDescription);
         fragment.setArguments(args);
         return fragment;
     }
@@ -45,19 +41,17 @@ public class FirstFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            description = getArguments().getString(ARG_PARAM1);
         }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_first, container, false);
-        count++;
-        TextView textView = view.findViewById(R.id.fragmentText);
-        textView.setText(String.valueOf(count));
+
+        TextView desc = view.findViewById(R.id.descriptionText);
+        desc.setText(description);
         return view;
     }
 }
