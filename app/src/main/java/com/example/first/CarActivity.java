@@ -67,7 +67,6 @@ public class CarActivity extends AppCompatActivity {
 
         bottomSheetDialog = new BottomSheetDialog(this);
         bottomSheetDialog.setCancelable(true);
-        LayoutInflater layoutInflater = bottomSheetDialog.getLayoutInflater();
         bottomSheetDialog.setContentView(view);
 
         Button okBottomSheet = view.findViewById(R.id.ok_bottom_sheet);
